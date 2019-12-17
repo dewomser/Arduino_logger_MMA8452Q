@@ -40,10 +40,10 @@ MMA8452Q accel;
 const int buttonPin = 12;
 const int ledPin =  13;
 int buttonState = 0;
-float xyz[263];
+float xyz[360];
 int cycle = 0;
 int cycle1 = 0;
-int messungen = 264;
+int messungen = 360;
 
 
 // The setup function simply starts serial and initializes the
@@ -83,7 +83,7 @@ buttonState = digitalRead(buttonPin);
     digitalWrite(ledPin, HIGH);
 
     for (int cycle = 0 ; cycle < messungen; cycle = cycle + 3) {
-      delay (100);
+      delay (250);
       
       //Serial.print (i);
       //Serial.print("\t");
@@ -99,7 +99,7 @@ buttonState = digitalRead(buttonPin);
 
     }
     Serial.print ("Daten zu Ende");
-    delay(1000);
+    // delay(1000);
     // cycle = 0 ;
 digitalWrite(ledPin, LOW);
   } else {
@@ -170,8 +170,9 @@ void printCalculatedAccels()
 
 void printCalculatedAccels()
 {
-  messungen = 250;
+  messungen = 357;
   cycle=cycle + 3;
+  delay(250);
     xyz[cycle] = (accel.cx);
     //  Serial.print("\t");
     xyz[cycle + 1] = (accel.cy);
@@ -183,16 +184,19 @@ Serial.print("\t");
 Serial.print (xyz[cycle + 1], 3);
 Serial.print("\t");
 Serial.print (xyz[cycle + 2], 3);
-Serial.print("\t");
+// Serial.print("\t");
+// Serial.print(cycle);
+Serial.print("\n");
 
-    
-    Serial.print(cycle);
-    Serial.print("\n");
 if (cycle > messungen){
   return;
   }
     
     }
+
+
+
+
 
 
 // This function demonstrates how to use the accel.readPL()
