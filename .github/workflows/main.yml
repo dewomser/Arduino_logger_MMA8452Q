@@ -21,7 +21,7 @@ jobs:
           ref: master
           path: CustomLibrary_wire # must contain string "Custom"     
      
-     - name: Compile all examples
+      - name: Compile all examples
         uses: ArminJo/arduino-test-compile@master
         with:
           sketch-names: acc-logger.ino
