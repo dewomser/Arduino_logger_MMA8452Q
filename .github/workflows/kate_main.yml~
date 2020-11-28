@@ -16,6 +16,6 @@ jobs:
       - name: Checkout custom library
         uses: actions/checkout@v2
         with:
-          repository: sparkfun/SparkFun_MMA8452Q_Arduino_Library/src 
+          repository: sparkfun/SparkFun_MMA8452Q_Arduino_Library 
           ref: master
-          path: CustomLibrary # must contain string "Custom"
+          path: CustomLibrary_src # must contain string "Custom"
