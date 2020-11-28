@@ -11,5 +11,11 @@ jobs:
       - name: Compile all examples
         uses: ArminJo/arduino-test-compile@master
         with:
-          sketch-names: acc-logger.ino
-          required-libraries:
+          sketch-names: acc-logge.ino
+          
+      - name: Checkout custom library
+        uses: actions/checkout@v2
+        with:
+          repository: sparkfun/SparkFun_MMA8452Q_Arduino_Library 
+          ref: master
+          path: CustomLibrary # must contain string "Custom"
