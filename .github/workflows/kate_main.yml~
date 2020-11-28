@@ -11,7 +11,7 @@ jobs:
       - name: Compile all examples
         uses: ArminJo/arduino-test-compile@master
         with:
-          sketch-names: acc-logge.ino
+          sketch-names: acc-logger.ino
           
       - name: Checkout custom library
         uses: actions/checkout@v2
