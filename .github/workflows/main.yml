@@ -25,3 +25,4 @@ jobs:
         uses: ArminJo/arduino-test-compile@master
         with:
           sketch-names: acc-logger.ino
+          arduino-board-fqbn: arduino:avr:micro
