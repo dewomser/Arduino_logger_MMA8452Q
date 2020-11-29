@@ -28,7 +28,7 @@ local, and you've found our code helpful, please buy us a round!
 
 Distributed as-is; no warranty is given.
 ******************************************************************************/
-//#include <Wire.h> // Must include Wire library for I2C
+#include <Wire.h> // Must include Wire library for I2C
 #include <SFE_MMA8452Q.h> // Includes the SFE_MMA8452Q library
 
 // Begin using the library by creating an instance of the MMA8452Q
