@@ -1,4 +1,7 @@
 # Arduino_logger_MMA8452Q
+
+Für Arduino Micro getestet: ![TestCompile](https://github.com/dewomser/Arduino_logger_MMA8452Q/workflows/TestCompile/badge.svg)
+
 Eim Logger für den Beschleunigungssensor MMA8452Q für den Arduino
 
 Nachdem der Arduino mit Spannung versorgt ist, werden sofort die Daten in ein Array geladen.
