@@ -3,8 +3,9 @@ on:
   push:
     paths:
       - 'acc-logger.ino'
-  jobs:
-   build:
+  
+jobs:
+  build:
     name: Test compiling examples for UNO
     runs-on: ubuntu-latest
     steps:
