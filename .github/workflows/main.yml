@@ -1,5 +1,7 @@
 name: TestCompile
 on: push
+     paths:
+       - 'acc-logger.ino'
 jobs:
   build:
     name: Test compiling examples for UNO
