@@ -10,7 +10,7 @@ Nachdem der Arduino mit Spannung versorgt ist, beginnt der Logger sofort die Dat
 Ist das Array gefüllt, wartet das Programm.
 
 Wird der Button 12 betätigt, dann wird der Inhalt des Arrays über USB ausgegeben.
-Die gesammelten Daten werden durch Klicken auf Button neu übertragen.
+Die gesammelten Daten werden durch wiederholtes Klicken auf den Button neu übertragen.
 
 Die Daten werden erst gelöscht wenn der Arduino nicht mehr mit Spannung versorgt wird.
 An- und abstecken des USB-Kabels zur Datenübertragung beeinträchtigen die Funktion nicht.  
