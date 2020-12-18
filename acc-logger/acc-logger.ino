@@ -28,7 +28,7 @@ local, and you've found our code helpful, please buy us a round!
 
 Distributed as-is; no warranty is given.
 some new lines for my usecase  by Stefan Höhn Dec.2020 
-works good with Arduino Micro
+works good with Arduino Micro plus
 ******************************************************************************/
 #include <Wire.h> // Must include Wire library for I2C
 #include <SparkFun_MMA8452Q.h> // Includes the SFE_MMA8452Q library
