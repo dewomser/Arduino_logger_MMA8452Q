@@ -2,7 +2,7 @@ name: TestCompile
 on:
   push:
     paths:
-      - 'acc-logger/acc-logger.ino'
+      - 'acc-logger.ino'
   
 jobs:
   build:
