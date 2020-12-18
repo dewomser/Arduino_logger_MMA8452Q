@@ -1,9 +1,10 @@
 name: TestCompile
-on: push
-     paths:
-       - 'acc-logger.ino'
-jobs:
-  build:
+on:
+  push:
+    paths:
+      - 'acc-logger.ino'
+  jobs:
+   build:
     name: Test compiling examples for UNO
     runs-on: ubuntu-latest
     steps:
