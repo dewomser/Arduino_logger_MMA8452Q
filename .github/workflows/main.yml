@@ -9,16 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Checkout custom library
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: sparkfun/SparkFun_MMA8452Q_Arduino_Library
           ref: master
           path: CustomLibrary # must contain string "Custom"
      
       - name: Checkout custom library wire
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: arduino/ArduinoCore-avr 
           ref: master
