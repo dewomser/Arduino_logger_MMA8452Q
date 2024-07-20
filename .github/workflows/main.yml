@@ -1,31 +1,29 @@
-name: Arduino Build and Upload
+name: Arduino Build und Upload
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+    - name: Code auschecken
+      uses: actions/checkout@v2
 
-    - name: Set up Arduino CLI
-      uses: per1234/setup-arduino-cli@v2
-      with:
-        arduino-cli-version: '0.18.3'
+    - name: Arduino CLI einrichten
+      uses: arduino/setup-arduino-cli@v2
 
-    - name: Install board support
+    - name: Board-Support installieren
       run: arduino-cli core install arduino:avr
 
-    - name: Install library dependencies
+    - name: Bibliotheksabhängigkeiten installieren
       run: arduino-cli lib install SparkFun_MMA8452Q_Arduino_Library
 
-    - name: Compile sketch
+    - name: Sketch kompilieren
       run: arduino-cli compile --fqbn arduino:avr:micro .
 
-    - name: Upload sketch
+    - name: Sketch hochladen
       run: arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:micro .
