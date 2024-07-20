@@ -1,31 +1,31 @@
-name: Compile Arduino
+name: Arduino Build and Upload
+
 on:
   push:
-    paths:
-    - 'acc-logger/**'  
+    branches:
+      - main
+
 jobs:
   build:
-    name: Test compiling examples for UNO
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Checkout custom library
-        uses: actions/checkout@v4
-        with:
-          repository: sparkfun/SparkFun_MMA8452Q_Arduino_Library
-          ref: master
-          path: CustomLibrary # must contain string "Custom"
-     
-      - name: Checkout custom library wire
-        uses: actions/wire@1.3.1
-        with:
-          repository: arduino/ArduinoCore-avr 
-          ref: master
-          path: CustomLibrary_wire # must contain string "Custom"     
-     
-      - name: Compile all examples
-        uses: ArminJo/arduino-test-compile@master
-        with:
-          sketch-names: acc-logger.ino
-          arduino-board-fqbn: arduino:avr:micro
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Arduino CLI
+      uses: per1234/setup-arduino-cli@v2
+      with:
+        arduino-cli-version: '0.18.3'
+
+    - name: Install board support
+      run: arduino-cli core install arduino:avr
+
+    - name: Install library dependencies
+      run: arduino-cli lib install SparkFun_MMA8452Q_Arduino_Library
+
+    - name: Compile sketch
+      run: arduino-cli compile --fqbn arduino:avr:micro .
+
+    - name: Upload sketch
+      run: arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:micro .
