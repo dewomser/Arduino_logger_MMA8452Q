@@ -1,6 +1,6 @@
 # Arduino_logger_MMA8452Q
 
-Für Arduino Micro getestet: [![TestCompile](https://github.com/dewomser/Arduino_logger_MMA8452Q/workflows/TestCompile/badge.svg)](https://github.com/dewomser/Arduino_logger_MMA8452Q/actions)
+Arduino Micro getestet: [![TestCompile](https://github.com/dewomser/Arduino_logger_MMA8452Q/workflows/TestCompile/badge.svg)](https://github.com/dewomser/Arduino_logger_MMA8452Q/actions)
 
 
 Ein Logger für den Beschleunigungssensor MMA8452Q für den Arduino.
