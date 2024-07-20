@@ -16,15 +16,16 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Set up Arduino CLI
-      uses: arduino/setup-arduino-cli@v1
+    - name: Install Arduino CLI
+      uses: arduino/setup-arduino-cli@v2
+  
       with:
         arduino-version: latest
 
     - name: Install necessary libraries
       run: |
         arduino-cli lib install "sparkfun/MMA8452_Accelerometer"
-        arduino-cli lib install "wire"
+        arduino-cli lib install "arduino/wire"
         # Add other libraries as needed
 
     - name: Compile sketches
