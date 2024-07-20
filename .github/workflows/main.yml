@@ -1,7 +1,10 @@
-name: Arduino Build und Upload
+name: Arduino Build
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
     branches:
       - main
 
@@ -10,20 +13,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Code auschecken
-      uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-    - name: Arduino CLI einrichten
-      uses: arduino/setup-arduino-cli@v2
+    - name: Set up Arduino CLI
+      uses: arduino/setup-arduino-cli@v1
+      with:
+        arduino-version: latest
 
-    - name: Board-Support installieren
-      run: arduino-cli core install arduino:avr
+    - name: Install necessary libraries
+      run: |
+        arduino-cli lib install "sparkfun/MMA8452_Accelerometer"
+        arduino-cli lib install "wire"
+        # Add other libraries as needed
 
-    - name: Bibliotheksabhängigkeiten installieren
-      run: arduino-cli lib install SparkFun_MMA8452Q_Arduino_Library
-
-    - name: Sketch kompilieren
-      run: arduino-cli compile --fqbn arduino:avr:micro .
-
-    - name: Sketch hochladen
-      run: arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:micro .
+    - name: Compile sketches
+      run: |
+        arduino-cli compile --fqbn arduino:avr:micro .
